@@ -1,0 +1,24 @@
+#Mohammad Mahmudul Hasan
+
+
+
+from datetime import datetime
+import shelve
+
+dict = {'Name': 'Hasan', 'Age': 9, 'Class': 'First'}
+s = shelve.open("myquotes")
+s["persons"]={'Name': 'Hasan', 'Age': 9, 'Class': 'First'}
+
+
+print (dict)
+print(datetime.now())
+a=datetime.now()
+print (dict)
+print(datetime.now())
+b=datetime.now()
+print("Dictionary's speed is ",b-a)
+print(s["persons"])
+print(datetime.now())
+c=datetime.now()
+print("Shelve's speed is ",c-b)
+s.close()
