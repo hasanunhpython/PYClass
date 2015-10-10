@@ -1,0 +1,19 @@
+#Mohammad Mahmudul Hasan
+#Homework5_2
+
+import urllib.request
+import re
+import json
+
+
+while True:
+    co_code=input("Please enter country code('quit' to quit):")
+    if(co_code=='quit'):
+        print("Good bye!")
+        break
+    url="https://restcountries.eu/rest/v1/alpha/"+co_code
+    page = urllib.request.urlopen(url)
+    content=page.read()#read the page
+    content_string = content.decode("utf-8")#turn all the things into string
+    json_data=json.loads(content_string)#load the dic's data
+    print(json_data["name"],json_data["capital"])
